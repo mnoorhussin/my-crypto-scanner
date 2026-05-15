@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 142 76% 36%;
+    --primary-foreground: 355.7 100% 97.3%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 142 76% 36%;
+    --radius: 0.5rem;
+    --positive: #22c55e;
+    --negative: #ef4444;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 142 76% 36%;
+    --primary-foreground: 355.7 100% 97.3%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 142 76% 36%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* --- WALLET ADAPTER SAFE MODE --- */
+
+/* 1. Modal Background */
+.wallet-adapter-modal-wrapper {
+  background-color: #0f172a !important; /* slate-900 */
+  color: white !important;
+  border: 1px solid #334155 !important;
+  border-radius: 12px !important;
+  /* Remove max-width constraint to let the library size itself */
+}
+
+/* 2. Text Colors */
+.wallet-adapter-modal-title,
+.wallet-adapter-dropdown-list-item {
+  color: white !important;
+}
+
+/* 3. The Buttons in the list */
+.wallet-adapter-button {
+  color: white !important;
+}
+
+.wallet-adapter-button:not([disabled]):hover {
+  background-color: #1e293b !important;
+}
+
+/* 4. Fix the "Duplicate" layout issue by forcing full width on list items */
+.wallet-adapter-list-item {
+  background: transparent !important;
+  border: none !important;
+  padding: 10px !important;
+  color: white !important;
+}
+
+/* 5. Ensure the Overlay is on top */
+.wallet-adapter-modal-overlay {
+  background: rgba(0, 0, 0, 0.8) !important;
+  backdrop-filter: blur(4px);
+  z-index: 9999 !important;
+}
+
+/* 6. Hide the sidebar layout if it tries to appear (Collapse to simple list) */
+.wallet-adapter-modal-list {
+  margin: 0 !important;
+  padding: 10px !important;
+  width: 100% !important;
+}
